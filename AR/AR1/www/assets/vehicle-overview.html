@@ -4,6 +4,7 @@
 
     <style>
     html, body, div, span, applet, object, iframe,
+<<<<<<< HEAD
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
   del, dfn, em, img, ins, kbd, q, s, samp,
@@ -67,6 +68,71 @@
   }
 
   /* other styles */
+=======
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed,
+	figure, figcaption, footer, header, hgroup,
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+	  margin: 0;
+	  padding: 0;
+	  border: 0;
+	  font-size: 100%;
+	  font: inherit;
+	  vertical-align: baseline;
+	}
+
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure,
+	footer, header, hgroup, menu, nav, section {
+	  display: block;
+	}
+
+	body {
+		color: #333;
+		font-family: 'Open Sans', sans-serif;
+		line-height: 1.4;
+	}
+
+	ol, ul {
+	  list-style: none;
+	}
+
+	blockquote, q {
+	  quotes: none;
+	}
+
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+	  content: '';
+	  content: none;
+	}
+
+	table {
+	  border-collapse: collapse;
+	  border-spacing: 0;
+	}
+
+	/* base */
+	.clearfix:before,
+	.clearfix:after {
+	  content: "";
+	  display: table;
+	}
+
+	.clearfix:after {
+	  clear: both;
+	}
+
+	/* other styles */
+>>>>>>> origin/master
 
     .hidden {
       display: none;
@@ -166,6 +232,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
   <div class="title-area">
     <img src="h1_vehicleoverview.png" alt="">
   </div>
@@ -209,4 +276,52 @@
       });
     });
   </script>
+=======
+	<div class="title-area">
+		<img src="h1_vehicleoverview.png" alt="">
+	</div>
+
+	<div class="icon-add">
+		<img src="ico_savecar.png" alt="">
+	</div>
+
+	<div class="icon-call">
+		<img src="ico_contactdealer.png" alt="">
+	</div>
+
+	<div id="tabPricing" class="tab pricing active"></div>
+	<div id="tabReviews" class="tab reviews"></div>
+	<div id="tabModelDetails" class="tab model-details"></div>
+	<div id="tabDealerInventory" class="tab dealer-inventory"></div>
+
+	<div id="displayPricing" class="display">
+		<img src="overlay_pricing.png" alt="">
+	</div>
+
+	<div id="displayReviews" class="display hidden">
+		<img src="overlay_review.png" alt="">
+	</div>
+
+	<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script>
+		$('document').ready(function () {
+			var reset = function () {
+				$('.tab').removeClass('active');
+				$('.display').addClass('hidden');
+			}
+
+			$('#tabPricing').on('click', function () {
+				reset();
+				$(this).addClass('active');
+				$('#displayPricing').removeClass('hidden');
+			});
+
+			$('#tabReviews').on('click', function () {
+				reset();
+				$(this).addClass('active');
+				$('#displayReviews').removeClass('hidden');
+			});
+		});
+	</script> -->
+>>>>>>> origin/master
 </body>
