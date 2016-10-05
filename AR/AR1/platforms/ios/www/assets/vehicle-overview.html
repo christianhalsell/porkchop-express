@@ -1,11 +1,212 @@
 <html>
 <head>
     <meta name="viewport" content="target-densitydpi=device-dpi, width = 320, user-scalable = 0">
+
     <style>
+    html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  b, u, i, center,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed,
+  figure, figcaption, footer, header, hgroup,
+  menu, nav, output, ruby, section, summary,
+  time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+
+  /* HTML5 display-role reset for older browsers */
+  article, aside, details, figcaption, figure,
+  footer, header, hgroup, menu, nav, section {
+    display: block;
+  }
+
+  body {
+    color: #333;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.4;
+  }
+
+  ol, ul {
+    list-style: none;
+  }
+
+  blockquote, q {
+    quotes: none;
+  }
+
+  blockquote:before, blockquote:after,
+  q:before, q:after {
+    content: '';
+    content: none;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  /* base */
+  .clearfix:before,
+  .clearfix:after {
+    content: "";
+    display: table;
+  }
+
+  .clearfix:after {
+    clear: both;
+  }
+
+  /* other styles */
+
+    .hidden {
+      display: none;
+    }
+
+    .title-area {
+      padding-top: 10px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .icon-add {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      left: 10px;
+      top: 55px;
+    }
+
+    .icon-call {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      left: 10px;
+      top: 118px;
+    }
+
+    .pricing {
+    width: 75px;
+    height: 32px;
+    background: url('pricing_off.png') no-repeat center;
+    background-size: 75%;
+
+    position: absolute;
+    right: 0;
+    top: 66px;
+    }
+
+    .pricing.active {
+      background: url('pricing_on.png');
+      background-size: 100%;
+    }
+
+    .reviews {
+      width: 82px;
+      height: 32px;
+      background: url('reviews_off.png') no-repeat center;
+      background-size: 80%;
+
+      position: absolute;
+      right: 0;
+      top: 100px;
+    }
+
+    .reviews.active {
+      background: url('reviews_on.png') no-repeat center;
+      background-size: 100%;
+    }
+
+    .model-details {
+      width: 99px;
+      height: 20px;
+      background: url('modeldetails_off.png') no-repeat center;
+      background-size: 100%;
+
+      position: absolute;
+      right: 0;
+      top: 142px;
+    }
+
+    .dealer-inventory {
+      width: 139px;
+      height: 32px;
+      background: url('dealerInventory_off.png') no-repeat center;
+      background-size: 88%;
+
+      position: absolute;
+      right: 0;
+      top: 177px;
+    }
+
+    .dealer-inventory.active {
+      background: url('dealerinventory_on.png') no-repeat center;
+      background-size: 100%;
+    }
+
+    .display {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
 
     </style>
 </head>
-</html>
-<body>
 
+<body>
+  <div class="title-area">
+    <img src="h1_vehicleoverview.png" alt="">
+  </div>
+
+  <div class="icon-add">
+    <img src="ico_savecar.png" alt="">
+  </div>
+
+  <div class="icon-call">
+    <img src="ico_contactdealer.png" alt="">
+  </div>
+
+  <div id="tabPricing" class="tab pricing"></div>
+  <div id="tabReviews" class="tab reviews"></div>
+  <div id="tabModelDetails" class="tab model-details"></div>
+  <div id="tabDealerInventory" class="tab dealer-inventory"></div>
+
+  <div id="displayPricing" class="display hidden">
+    <img src="overlay_pricing.png" alt="">
+  </div>
+
+  <div id="displayReviews" class="display hidden">
+    <img src="overlay_review.png" alt="">
+  </div>
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script>
+    $('document').ready(function () {
+      $('#tabPricing').on('click', function () {
+        $('.tab').removeClass('active');
+        $('.display').addClass('hidden');
+        $(this).addClass('active');
+        $('#displayPricing').removeClass('hidden');
+      });
+
+      $('#tabReviews').on('click', function () {
+        $('.tab').removeClass('active');
+        $('.display').addClass('hidden');
+        $(this).addClass('active');
+        $('#displayReviews').removeClass('hidden');
+      });
+    });
+  </script>
 </body>

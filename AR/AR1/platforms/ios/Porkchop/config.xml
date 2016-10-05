@@ -79,7 +79,7 @@
         <param name="ios-package" value="CDVVibration" />
     </feature>
     <name>Porkchop</name>
-    <description>HThe Porkchop Express</description>
+    <description>The Porkchop Express</description>
     <author email="josh.studley@kbb.com" href="http://phonegap.com">The Porkchop Express</author>
     <content src="index.html" />
     <icon src="icon.png" />
@@ -135,4 +135,5 @@
     <preference name="StatusBarOverlaysWebView" value="true" />
     <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="android-minSdkVersion" value="14" />
+    <preference name="orientation" value="all" />
 </widget>

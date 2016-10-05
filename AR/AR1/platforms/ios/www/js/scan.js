@@ -35,19 +35,22 @@ var World = {
     });
 
     var overlayVehicle = new AR.HtmlDrawable({
-      uri: "assets/wheels.html"
+      uri: "assets/weather.html"
     }, 0.25, {
       viewportWidth: 640,
       viewportHeight: 960,
-      scale: 6,
+      scale: 6.5,
       offsetX: 0,
-      offsetY: 0,
+      offsetY: -0.1,
       horizontalAnchor: AR.CONST.HORIZONTAL_ANCHOR.LEFT,
       verticalAnchor: AR.CONST.VERTICAL_ANCHOR.TOP,
       clickThroughEnabled: true,
       allowDocumentLocationChanges: true,
       onDocumentLocationChanged: function onDocumentLocationChangedFn(uri) {
         AR.context.openInBrowser(uri);
+      },
+      onClick : function() {
+        overlayVehicle.uri = "assets/vehicle-overview.html";
       }
     });
 
@@ -56,9 +59,9 @@ var World = {
     }, 0.25, {
       viewportWidth: 640,
       viewportHeight: 960,
-      scale: 6,
-      offsetX: 0,
-      offsetY: 0,
+      scale: 3,
+      offsetX: -0.1,
+      offsetY: 0.1,
       horizontalAnchor: AR.CONST.HORIZONTAL_ANCHOR.LEFT,
       verticalAnchor: AR.CONST.VERTICAL_ANCHOR.TOP,
       clickThroughEnabled: true,
