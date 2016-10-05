@@ -1,23 +1,9 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+/* index.css */
+
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700';
 
 * {
+  font-family: 'Roboto', sans-serif;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
@@ -29,49 +15,107 @@ body {
   /* prevent webkit from resizing text to fit */
   -webkit-user-select: none;
   /* prevent copy paste, to allow, change 'none' to 'text' */
-  background-color: #E4E4E4;
-  background-image: linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-  background-image: -webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-  background-image: -ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-  background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0, #A7A7A7), color-stop(0.51, #E4E4E4));
-  background-attachment: fixed;
-  font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-  font-size: 12px;
+  height: 100vh;
+  margin: 0;
+
+}
+
+/* LAYOUT */
+.row {
+  clear: both;
+}
+
+.row:after {
+    clear: both;
+    content: "\00a0 ";
+}
+
+.col-xs-3,
+.col-xs-6,
+.col-xs-9 {
+  float: left;
+  margin: 0 10px;
+}
+
+.col-xs-3 {
+  width: 28%;
+}
+
+.col-xs-6 {
+  width: 42%;
+}
+
+.col-xs-9 {
+  width: 60%;
+}
+
+/* ENTRY CONTAINER */
+#entry-container {
+  background: url('../assets/bg-road_700px.jpg');
   height: 100%;
-  margin: 0px;
-  padding: 0px;
+  margin: 0 auto;
+  padding-top: 15px;
+  width: 100%;
+}
+
+/* DEALER CONTAINER */
+#dealer-container {
+  color: #505050;
+  height: 60%;
+}
+
+#dealer-container h2 {
+  color: #ececec;
+  font-size: 1.4em;
   text-transform: uppercase;
+}
+
+#dealer-container img {
   width: 100%;
 }
 
-.container-buttons {
-  margin-top: 100px;
+#dealer-container .phone {
+  font-size: 1.2em;
 }
 
-.button-demo {
-  background-color: #333333;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  color: #FFFFFF;
+#dealer-container .phone a {
+  text-decoration: none;
+}
+
+#rating {
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+#rating .rate {
   display: block;
-  font-size: 12px;
-  height: 40px;
-  line-height: 40px;
-  margin: 10px auto;
-  text-align: center;
-  width: 90%;
+  font-size: 2em;
 }
 
-.info {
-  font-size: large;
-  position: absolute;
-  width: 100%;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  background-color: #BBBBBB;
+#rating .label {
+  font-size: 0.7em;
+}
+
+/* CTA CONTAINER */
+.cta-container {
+  padding: 30px 0;
   text-align: center;
-  top: 0;
-  left: 0;
-  opacity: 0.7;
-  display: table;
+}
+
+.cta-container button {
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2em;
 }
