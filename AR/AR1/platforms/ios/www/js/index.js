@@ -44,8 +44,7 @@ var app = {
     var world = {
       "path": url,
       "requiredFeatures": [
-              "2d_tracking",
-              "geo"
+              "2d_tracking"
           ],
       "startupConfiguration": {
         "camera_position": "back"
@@ -71,10 +70,6 @@ var app = {
 
     document.getElementById('btnOne').addEventListener('click', function () {
       app.loadCustomARchitectWorldFromURL('www/scan.html');
-    });
-
-    document.getElementById('btnTwo').addEventListener('click', function () {
-      app.loadCustomARchitectWorldFromURL('www/world_3d.html');
     });
   },
 
