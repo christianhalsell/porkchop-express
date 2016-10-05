@@ -141,13 +141,14 @@ p {
 	border-top: 5px solid #fff;
 	border-bottom: 2px solid #ddd;
 	flex: 1;
-	padding: 20px 10px;
+	padding: 17px 10px 20px;
 }
 
 .tab.active {
 	background-color: #fff;
 	border: 2px solid #ddd;
 	border-bottom: 0;
+	padding: 20px 10px;
 }
 
 .tab-content {
