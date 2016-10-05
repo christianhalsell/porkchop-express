@@ -34,14 +34,20 @@ var World = {
       scale: 2
     });
 
+    var vehicleURI = [
+      "assets/vehicle-overview.html",
+      "assets/vehicle-overview-reviews.html"
+    ];
+    var vehicleURIindex = 0;
+
     var overlayVehicle = new AR.HtmlDrawable({
-      uri: "assets/weather.html"
+      uri: vehicleURI[vehicleURIindex]
     }, 0.25, {
       viewportWidth: 640,
       viewportHeight: 960,
-      scale: 6.5,
+      scale: 5,
       offsetX: 0,
-      offsetY: -0.1,
+      offsetY: -0.2,
       horizontalAnchor: AR.CONST.HORIZONTAL_ANCHOR.LEFT,
       verticalAnchor: AR.CONST.VERTICAL_ANCHOR.TOP,
       clickThroughEnabled: true,
@@ -50,7 +56,8 @@ var World = {
         AR.context.openInBrowser(uri);
       },
       onClick : function() {
-        overlayVehicle.uri = "assets/vehicle-overview.html";
+        vehicleURIindex = vehicleURIindex === 0 ? 1 : 0;
+        overlayVehicle.uri = vehicleURI[vehicleURIindex];
       }
     });
 
