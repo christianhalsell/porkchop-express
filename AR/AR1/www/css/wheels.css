@@ -6,13 +6,20 @@
   flex-direction: column;
 }
 
-.flex-container.right {
+.flex-container.content {
   flex: 1 0 50%;
-  justify-content: flex-end;
 }
 
 .flex-item {
-  flex: 0 1 auto;
+  flex: 1 0 auto;
+}
+
+.flex-item.left {
+  align-self: flex-start;
+}
+
+.flex-item.left li {
+  text-align: left;
 }
 
 .header-image {
@@ -21,6 +28,17 @@
 
 .row {
 }
+
+.wheels {
+  display: flex;
+}
+
+.wheels img {
+  flex: 0 1 auto;
+  height: 15%;
+  margin: 20px 10px;
+}
+
 
 body {
 }
