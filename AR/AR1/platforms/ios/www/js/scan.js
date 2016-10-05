@@ -30,21 +30,39 @@ var World = {
     var imgOne = new AR.ImageResource("assets/imageOne.png");
     var overlayOne = new AR.ImageDrawable(imgOne, 1, {
       offsetX: -0.15,
-      offsetY: 0
+      offsetY: 0,
+      scale: 2
     });
 
-    var overlayWidget = new AR.HtmlDrawable({
-      uri: "assets/overlay.html"
+    var overlayVehicle = new AR.HtmlDrawable({
+      uri: "assets/wheels.html"
     }, 0.25, {
-      viewportWidth: 320,
-      viewportHeight: 100,
-
-      offsetX: +0.36,
-      offsetY: 0.5,
-      horizontalAnchor: AR.CONST.HORIZONTAL_ANCHOR.RIGHT,
+      viewportWidth: 640,
+      viewportHeight: 960,
+      scale: 6,
+      offsetX: 0,
+      offsetY: 0,
+      horizontalAnchor: AR.CONST.HORIZONTAL_ANCHOR.LEFT,
       verticalAnchor: AR.CONST.VERTICAL_ANCHOR.TOP,
       clickThroughEnabled: true,
-      allowDocumentLocationChanges: false,
+      allowDocumentLocationChanges: true,
+      onDocumentLocationChanged: function onDocumentLocationChangedFn(uri) {
+        AR.context.openInBrowser(uri);
+      }
+    });
+
+    var overlayTire = new AR.HtmlDrawable({
+      uri: "assets/wheels.html"
+    }, 0.25, {
+      viewportWidth: 640,
+      viewportHeight: 960,
+      scale: 6,
+      offsetX: 0,
+      offsetY: 0,
+      horizontalAnchor: AR.CONST.HORIZONTAL_ANCHOR.LEFT,
+      verticalAnchor: AR.CONST.VERTICAL_ANCHOR.TOP,
+      clickThroughEnabled: true,
+      allowDocumentLocationChanges: true,
       onDocumentLocationChanged: function onDocumentLocationChangedFn(uri) {
         AR.context.openInBrowser(uri);
       }
@@ -65,22 +83,8 @@ var World = {
     */
     var pageOne = new AR.Trackable2DObject(this.tracker, "side", {
       drawables: {
-        cam: [overlayOne, pageOneButton, overlayWidget]
+        cam: [overlayVehicle]
       }
-    });
-
-    /*
-      Similar to the first part, the image resource and the AR.ImageDrawable for the second overlay are created.
-    */
-    var imgTwo = new AR.ImageResource("assets/imageTwo.png");
-    var overlayTwo = new AR.ImageDrawable(imgTwo, 0.5, {
-      offsetX: 0.12,
-      offsetY: -0.01
-    });
-    var pageTwoButton = this.createWwwButton("https://www.maciag-offroad.de/kini-red-bull-downhill-helm-mtb-silber-blau-sid50616.html", 0.15, {
-      offsetX: 0,
-      offsetY: -0.25,
-      zOrder: 1
     });
 
     /*
@@ -88,7 +92,7 @@ var World = {
     */
     var pageTwo = new AR.Trackable2DObject(this.tracker, "tire", {
       drawables: {
-        cam: [overlayTwo, pageTwoButton]
+        cam: [overlayTire]
       }
     });
   },

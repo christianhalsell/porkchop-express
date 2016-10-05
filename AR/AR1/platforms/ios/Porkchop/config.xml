@@ -80,7 +80,7 @@
     </feature>
     <name>Porkchop</name>
     <description>HThe Porkchop Express</description>
-    <author email="support@phonegap.com" href="http://phonegap.com">PhoneGap Team</author>
+    <author email="josh.studley@kbb.com" href="http://phonegap.com">The Porkchop Express</author>
     <content src="index.html" />
     <icon src="icon.png" />
     <access origin="*" />
