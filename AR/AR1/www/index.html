@@ -9,11 +9,34 @@
   <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' data:* gap://* tel:* 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'" />
 
-  <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <link rel="stylesheet" type="text/css" href="css/entry.css" />
   <title>COX n Scan</title>
 </head>
 
 <body onLoad="app.initialize();">
+
+    <div id="entry-container">
+      <div id="dealer-container" class="row">
+        <div class="col-xs-3">
+          <img src="assets/radar.png"/>
+        </div>
+        <div class="col-xs-9">
+          <h2>Norm Reeves Honda Superstore Irvine</h2>
+          <p class="address">16 Auto Center Dr, Irvine, CA 92618</p>
+          <p class="phone"><a href="tel:888-495-7475">888-495-7475</a></p>
+          <div id="rating">
+            <span class="rate">4.8/5</span>
+            <span class="label">Dealer Rating</span>
+          </div>
+        </div>
+      </div>
+      <div id="btnOne" class="cta-container row">
+        <button>
+          Scan a Vehicle
+        </button>
+      </div>
+    </div>
+
 
   <div class="container-buttons">
     <div id="btnOne" class="button-demo">Scan Target</div>
