@@ -70,7 +70,7 @@ var app = {
     document.addEventListener('deviceready', this.onDeviceReady, false);
 
     document.getElementById('btnOne').addEventListener('click', function () {
-      app.loadCustomARchitectWorldFromURL('www/scan.html');
+      app.loadCustomARchitectWorldFromURL('www/world_2d.html');
     });
 
     document.getElementById('btnTwo').addEventListener('click', function () {
