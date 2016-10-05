@@ -1,0 +1,162 @@
+/*body {
+	
+}
+
+@media only screen and (max-width: 550px) {
+	body {
+
+	}
+}*/
+
+/* global resets */
+* {
+  ///box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {	
+	color: #333;
+	font-family: 'Open Sans', sans-serif;
+	line-height: 1.4;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* base */
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* other styles */
+
+h1 {
+	font-size: 28px;
+}
+
+h2 {
+	font-size: 24px;
+}
+
+h3 {
+	font-size: 20px;
+}
+
+h4 {
+	font-size: 18px;
+}
+
+p {
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+.title-area {
+	padding: 20px 10px;
+}
+
+.thumbnails {
+	display: flex;
+	margin-bottom: 6px;
+}
+
+.thumb {
+	background-size: cover;
+	border-right: 2px solid #fff;
+	flex: 1;
+	height: 60px;
+}
+
+.thumb:last-child {
+	border-right: 0;
+}
+
+.thumbnail-a {
+	background-image: url("2016_honda_crv.jpg");
+}
+
+.thumbnail-b {
+	background-image: url("compact_suv_comparison.jpg");
+}
+
+.thumbnail-c {
+	background-image: url("dealer.png");
+}
+
+.tabs {
+	display: flex;
+	text-align: center;
+}
+
+.tab {
+	background-color: #eee;
+	border-top: 5px solid #fff;
+	border-bottom: 2px solid #ddd;
+	flex: 1;
+	padding: 17px 10px 20px;
+}
+
+.tab.active {
+	background-color: #fff;
+	border: 2px solid #ddd;
+	border-bottom: 0;
+	padding: 20px 10px;
+}
+
+.tab-content {
+	border: 2px solid #ddd;
+	border-top: 0;
+	padding: 10px;
+}
+
+.score {
+	font-size: 36px;
+}
