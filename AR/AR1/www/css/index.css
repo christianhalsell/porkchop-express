@@ -17,7 +17,13 @@ body {
   /* prevent copy paste, to allow, change 'none' to 'text' */
   height: 100vh;
   margin: 0;
+}
 
+hr {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  border: 0;
+  height: 1px;
+  width: 50%;
 }
 
 /* LAYOUT */
@@ -62,6 +68,7 @@ body {
 #dealer-container {
   color: #505050;
   height: 60%;
+  margin-top: 15px;
 }
 
 #dealer-container h2 {
@@ -74,8 +81,13 @@ body {
   width: 100%;
 }
 
+#dealer-container .address {
+  margin-bottom: 5px;
+}
+
 #dealer-container .phone {
   font-size: 1.2em;
+  margin-top: 0;
 }
 
 #dealer-container .phone a {
