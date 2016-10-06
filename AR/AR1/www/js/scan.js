@@ -22,7 +22,7 @@ var World = {
     /*
       The button is created similar to the overlay feature. An AR.ImageResource defines the look of the button and is reused for both buttons.
     */
-    this.imgButton = new AR.ImageResource("assets/wwwButton.jpg");
+    this.imgButton = new AR.ImageResource("assets/newButton.png");
 
     /*
       The next step is to create the augmentation. In this example an image resource is created and passed to the AR.ImageDrawable. A drawable is a visual component that can be connected to an IR target (AR.Trackable2DObject) or a geolocated object (AR.GeoObject). The AR.ImageDrawable is initialized by the image and its size. Optional parameters allow for position it relative to the recognized target.
@@ -58,13 +58,16 @@ var World = {
       onClick : function() {
         vehicleURIindex = vehicleURIindex === 0 ? 1 : 0;
         overlayVehicle.uri = vehicleURI[vehicleURIindex];
-      }
+      },
+      zOrder: 0
     });
 
 
     var wheelsURI = [
       "assets/wheels.html",
-      "assets/wheels1.html"
+      "assets/wheels1.html",
+      "assets/wheels2.html",
+      "assets/wheels3.html"
     ];
     var wheelsURIindex = 0;
     var overlayTire = new AR.HtmlDrawable({
@@ -73,7 +76,7 @@ var World = {
       viewportWidth: 640,
       viewportHeight: 960,
       scale: 3,
-      offsetX: -0.1,
+      offsetX: -0.11,
       offsetY: 0.1,
       horizontalAnchor: AR.CONST.HORIZONTAL_ANCHOR.LEFT,
       verticalAnchor: AR.CONST.VERTICAL_ANCHOR.TOP,
@@ -83,18 +86,23 @@ var World = {
         AR.context.openInBrowser(uri);
       },
       onClick : function() {
-        wheelsURIindex = wheelsURIindex === 0 ? 1 : 0;
+        wheelsURIindex++;
+        if(wheelsURIindex >= wheelsURI.length) {
+          wheelsURIindex = 0;
+        }
         overlayTire.uri = wheelsURI[wheelsURIindex];
-      }
+      },
+      zOrder: 1
     });
 
     /*
       For each target an AR.ImageDrawable for the button is created by utilizing the helper function createWwwButton(url, options). The returned drawable is then added to the drawables.cam array on creation of the AR.Trackable2DObject.
     */
     var pageOneButton = this.createWwwButton("http://www.christianhalsell.com/external-site/", 0.1, {
-      offsetX: -0.25,
-      offsetY: -0.25,
-      zOrder: 1
+      offsetX: 0,
+      offsetY: -1,
+      zOrder: 2,
+      scale: 2
     });
 
     /*
@@ -103,7 +111,12 @@ var World = {
     */
     var pageOne = new AR.Trackable2DObject(this.tracker, "side", {
       drawables: {
-        cam: [overlayVehicle]
+        cam: [overlayVehicle, pageOneButton]
+      }
+    });
+    var pageOne2 = new AR.Trackable2DObject(this.tracker, "side2", {
+      drawables: {
+        cam: [overlayVehicle, pageOneButton]
       }
     });
 
@@ -111,6 +124,11 @@ var World = {
       The AR.Trackable2DObject for the second page uses the same tracker but with a different target name and the second overlay.
     */
     var pageTwo = new AR.Trackable2DObject(this.tracker, "tire", {
+      drawables: {
+        cam: [overlayTire]
+      }
+    });
+    var pageTwo2 = new AR.Trackable2DObject(this.tracker, "tire2", {
       drawables: {
         cam: [overlayTire]
       }
